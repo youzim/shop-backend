@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ['jdk21', 'maven']
-
-[phases.build]
-cmds = ['export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac)))) && mvn clean package -DskipTests']
-
-[start]
-cmd = 'java -jar target/my-shop-server-0.0.1-SNAPSHOT.jar'
