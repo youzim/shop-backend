@@ -1,3 +1,4 @@
+# force nixpacks
 [phases.setup]
 nixPkgs = ['jdk21', 'maven']
 
