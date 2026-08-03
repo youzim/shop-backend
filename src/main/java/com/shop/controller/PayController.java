@@ -61,9 +61,13 @@ public class PayController {
             conn.setReadTimeout(15000);
 
             // success_url 和 cancel_url 必须整体 encode，否则 Stripe 会解析错参数
-            String successUrl = "http://localhost:5173/orders?success=true&orderNo=" + orderNo + "&session_id={CHECKOUT_SESSION_ID}";
-            String cancelUrl = "http://localhost:5173/orders";
+//            String successUrl = "http://localhost:5173/orders?success=true&orderNo=" + orderNo + "&session_id={CHECKOUT_SESSION_ID}";
+//            String cancelUrl = "http://localhost:5173/orders";
+// String successUrl = "http://localhost:5173/orders?success=true...";
+// String cancelUrl = "http://localhost:5173/orders";
 
+            String successUrl = "https://new-shop-7g2w.vercel.app/orders?success=true&orderNo=" + orderNo + "&session_id={CHECKOUT_SESSION_ID}";
+            String cancelUrl = "https://new-shop-7g2w.vercel.app/orders";
             String body = "payment_method_types[0]=card"
                     + "&line_items[0][price_data][currency]=cny"
                     + "&line_items[0][price_data][unit_amount]=" + amount
