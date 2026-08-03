@@ -12,8 +12,9 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                         "http://localhost:5173",
                         "http://localhost:5174",   // ← 加上这个
-                        "http://localhost:8080"
-                )
+                        "http://localhost:8080",
+                        "https://sunny-vibrancy-production-d0c8.up.railway.app"  // ← 去掉 /home
+                        )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)

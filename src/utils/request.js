@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const request = axios.create({
-    baseURL: 'http://localhost:8080/api',
-    timeout: 5000
+    baseURL: import.meta.env.VITE_API_BASE_URL || '/api',  // ← 改这里：/api
+    timeout: 10000  // ← 改成 10 秒
 })
 
 request.interceptors.response.use(
