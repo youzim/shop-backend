@@ -2,7 +2,7 @@
 FROM eclipse-temurin:21-jdk-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN apk add --no-cache maven && mvn clean package -DskipTests
+RUN apk add --no-cache maven && mvn clean package -Dmaven.test.skip=true
 
 # 运行阶段：只保留 JRE 和 jar 包
 FROM eclipse-temurin:21-jre-alpine
