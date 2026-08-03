@@ -1,4 +1,4 @@
-package com.shop.config;
+package com.shop.config;  // ← 改成你的包名
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -6,18 +6,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(
-                        "http://localhost:5173",
-                        "http://localhost:5174",   // ← 加上这个
-                        "http://localhost:8080",
-                        "https://sunny-vibrancy-production-d0c8.up.railway.app"  // ← 去掉 /home
-                        )
+                .allowedOriginPatterns("*")  // 先允许所有域名，跑通后再收紧
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)
-                .maxAge(3600);  // 预检请求缓存1小时
+                .maxAge(3600);
     }
 }
