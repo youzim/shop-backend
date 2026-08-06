@@ -1,0 +1,1 @@
+import{j as e}from"./runtime-core.esm-bundler-DNO0G_6f.js";import{g as t}from"./index-DRE_nsci.js";var n=t(`order`,()=>{let t=e(null);return{buyNowGoods:t,setBuyNow:e=>{t.value=e},clearBuyNow:()=>{t.value=null}}});export{n as t};
